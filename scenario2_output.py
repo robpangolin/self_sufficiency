@@ -294,27 +294,27 @@ for use in land_uses:
     for reqt in reqts:
         simple += build[use]*reqt_use[use, reqt] <= lpSum(x[cat,use,reqt] for cat in cat_pool[reqt])
 #end of adapted code        
-simple += lpSum([carbo[i] * build[i] for i in build]) >= 5.44e+12
-simple += lpSum([VitA[i]*build[i]for i in build]) >= 1.455084e+07
-simple += lpSum([VitD[i]*build[i]for i in build]) >= 2.139060e+05
-simple += lpSum([Calcium[i]*build[i]for i in build]) >= 2.812795e+10 
-simple += lpSum([VitK[i]*build[i]for i in build]) >= 1.400092e+06
-simple += lpSum([VitC[i]*build[i]for i in build]) >= 1.128753e+09
-simple += lpSum([Thiam[i]*build[i]for i in build]) >= 2.867559e+07
-simple += lpSum([Ribo[i]*build[i]for i in build]) >= 2.973938e+07
-#simple += lpSum([Niac[i]*build[i]for i in build]) >= 3.762555e+08
-simple += lpSum([VitB6[i]*build[i]for i in build]) >= 3.527821e+07
-simple += lpSum([Panto[i]*build[i]for i in build]) >= 1.251690e+08
-#simple += lpSum([Biotin[i]*build[i]for i in build]) >= 7.253949e+05
-simple += lpSum([Selen[i]*build[i]for i in build]) >= 7.496641e+05
-simple += lpSum([Magnes[i]*build[i]for i in build]) >= 5.594158e+09
-simple += lpSum([Zinc[i]*build[i]for i in build]) >= 2.204601e+08
-simple += lpSum([Iron[i]*build[i]for i in build]) >= 8.465457e+08
-simple += lpSum([VitB12[i]*build[i]for i in build]) >= 5.965377e+04
-simple += lpSum([Folate[i]*build[i]for i in build]) >= 9.939047e+06
-#simple += lpSum([Iodine[i]*build[i]for i in build]) >= 3.717961e+06
-simple += lpSum([Prot[i]*build[i]for i in build]) >= 8.260738e+11
-simple += lpSum([Fat[i]*build[i]for i in build]) >=  3.857829e+11
+simple += lpSum([carbo[i] * build[i] for i in build]) >= 5.0097e+12
+simple += lpSum([VitA[i]*build[i]for i in build]) >= 1.343837e+07
+simple += lpSum([VitD[i]*build[i]for i in build]) >= 1.875182e+05
+simple += lpSum([Calcium[i]*build[i]for i in build]) >= 2.570267e+10 
+simple += lpSum([VitK[i]*build[i]for i in build]) >= 1.284501e+06
+simple += lpSum([VitC[i]*build[i]for i in build]) >= 1.044726e+09
+simple += lpSum([Thiam[i]*build[i]for i in build]) >= 2.650924e+07
+simple += lpSum([Ribo[i]*build[i]for i in build]) >= 2.746771e+07
+#simple += lpSum([Niac[i]*build[i]for i in build]) >= 3.479568e+08
+simple += lpSum([VitB6[i]*build[i]for i in build]) >= 3.231519e+07
+simple += lpSum([Panto[i]*build[i]for i in build]) >= 1.157954e+08
+#simple += lpSum([Biotin[i]*build[i]for i in build]) >= 6.681567e+05
+simple += lpSum([Selen[i]*build[i]for i in build]) >= 6.950612e+05
+simple += lpSum([Magnes[i]*build[i]for i in build]) >= 5.185360e+09
+simple += lpSum([Zinc[i]*build[i]for i in build]) >= 2.062908e+08
+simple += lpSum([Iron[i]*build[i]for i in build]) >= 7.963802e+08
+simple += lpSum([VitB12[i]*build[i]for i in build]) >= 5.513048e+04
+simple += lpSum([Folate[i]*build[i]for i in build]) >= 9.185334e+06
+#simple += lpSum([Iodine[i]*build[i]for i in build]) >= 3.464959e+06
+simple += lpSum([Prot[i]*build[i]for i in build]) >= 7.633401e+11
+simple += lpSum([Fat[i]*build[i]for i in build]) >=  3.551532e+11
 
 solver = getSolver('GLPK_CMD')
 simple.solve(solver)
